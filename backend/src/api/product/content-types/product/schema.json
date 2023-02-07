@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 25,
+      "required": true
+    },
+    "mark": {
+      "type": "string",
+      "minLength": 3,
+      "required": true,
+      "maxLength": 25
+    },
+    "model": {
+      "type": "string",
+      "maxLength": 25
+    },
+    "manufacturer": {
+      "type": "string",
+      "maxLength": 25
+    },
+    "duration": {
+      "type": "string",
+      "maxLength": 25,
+      "required": false
+    },
+    "group": {
+      "type": "string",
+      "maxLength": 25
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 300
+    },
+    "material": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "age": {
+      "type": "string",
+      "maxLength": 25
+    },
+    "product_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "maxLength": 15,
+      "required": true
+    },
+    "language": {
+      "type": "string",
+      "required": false,
+      "maxLength": 25
+    },
+    "gender": {
+      "type": "string"
+    },
+    "dimension": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "string",
+      "maxLength": 25
+    }
+  }
+}

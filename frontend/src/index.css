@@ -1,0 +1,32 @@
+/* fonts */
+@font-face {
+  font-family: "Noto Sans Lao Looped";
+  src: url("./res/fonts/NotoSansLaoLooped.ttf");
+}
+
+@font-face {
+  font-family: "Noto Sans Lao Looped Thin";
+  src: url("./res/fonts/NotoSansLaoLooped-Light.ttf");
+}
+
+@font-face {
+  font-family: "Bungee Regular";
+  src: url("./res/fonts/Bungee-Regular.ttf");
+}
+
+html
+{
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: "Bungee Regular" !important;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #9CECFB; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #16161694, #65c7f748, #16161694); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, rgba(82, 114, 255, 0.39), rgba(204, 210, 241, 0.39), rgba(82, 113, 255, 0.39)), 
+              url("./res/imgs/hq-geek-background.jpg") repeat fixed;
+  background-size: contain;
+}

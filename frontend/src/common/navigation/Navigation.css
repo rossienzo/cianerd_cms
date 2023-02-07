@@ -1,0 +1,27 @@
+.navigation
+{
+    background-color: var(--bg-primary);
+}
+
+.navbar-brand img
+{
+    max-height: 64px;
+}
+
+.navigation .navbar-nav a 
+{ 
+    color: var(--bg-link); 
+    border-bottom: 3px solid var(--bg-primary);
+}
+
+.navigation .navbar-nav a:hover 
+{ 
+    color: var(--bg-lite-gray);
+    border-bottom: 3px solid var(--bg-link); 
+}
+
+.navigation .navbar-nav .current-link
+{
+    border-bottom: 3px solid;
+}
+

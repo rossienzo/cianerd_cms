@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_products_action_figures",
+  "info": {
+    "displayName": "action_figure"
+  },
+  "options": {},
+  "attributes": {
+    "mark": {
+      "type": "string",
+      "required": true
+    },
+    "material": {
+      "type": "string",
+      "required": true
+    },
+    "weight": {
+      "type": "string",
+      "required": true
+    },
+    "dimensions": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

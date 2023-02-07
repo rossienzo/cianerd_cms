@@ -1,0 +1,44 @@
+footer
+{
+    padding: 1.8rem;
+    background-color: var(--bg-primary);
+}
+
+footer p,
+footer a
+{
+    color: var(--bg-link);
+    text-decoration: none;
+}
+
+footer .col
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .col #branding img
+{
+    max-width: 128px;
+    max-height: 128px;
+}
+
+footer .social-medias h3
+{
+    color: var(--bg-link);
+    font-size: var(--h3-font-size);
+}
+
+footer .icons
+{
+    display: inline-flex;
+}
+
+
+footer .icons .icon
+{
+    height: 18px;
+    width: 18px;
+}

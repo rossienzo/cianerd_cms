@@ -1,0 +1,29 @@
+.banner-item
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 2px solid var(--bg-catalog-type-product);
+}
+
+.banner-item:first-child
+{
+    border-left: none;
+}
+
+.banner-item .icon > *
+{
+    max-height: 38px;
+    padding-right: 5px;
+}
+
+.banner-item .description p
+{
+    font-family: "Noto Sans Lao Looped Thin" !important;
+    margin-bottom: 0.1rem;
+}
+
+.banner-item .description span
+{
+    color: var(--bg-primary);
+}

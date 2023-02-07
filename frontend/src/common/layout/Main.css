@@ -1,0 +1,38 @@
+main 
+{
+    background-color: var(--bg-lite-gray);
+    min-height: 360px;
+}
+
+h2
+{
+    color: var(--bg-primary);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.see-more
+{
+    font-size: 1.2rem;
+    padding: calc(var(--mg-bottom) - 1.2rem) 0px var(--mg-bottom) 0px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Contact page */
+main.contact
+{
+    margin-bottom: 100px;
+}
+
+
+/* Error page (404) */
+main.error-page
+{
+    background-color: #FFFFFF;
+}
+
+main.error-page p
+{
+    text-align: center;
+}

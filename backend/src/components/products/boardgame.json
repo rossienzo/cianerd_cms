@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_products_boardgames",
+  "info": {
+    "displayName": "boardgame"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "mark": {
+      "type": "string",
+      "required": true
+    },
+    "duration": {
+      "type": "string",
+      "required": false
+    },
+    "people": {
+      "type": "string",
+      "required": false
+    },
+    "description": {
+      "type": "string",
+      "required": false,
+      "maxLength": 100
+    }
+  }
+}

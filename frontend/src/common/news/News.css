@@ -1,0 +1,54 @@
+.send-news
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    
+    background: -webkit-linear-gradient(to right, #16161694, #65c7f748, #16161694); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(77, 104, 254, 0.8), rgba(77, 104, 254, 0.8)), 
+                url("../../res/imgs/background-liga-email.jpg") center;
+    background-size: 100%;
+}
+
+.send-news .row
+{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.send-news h3,
+.send-news button
+{
+    color: var(--bg-link);
+}
+
+.send-news h3
+{
+    font-size: var(--h3-font-size);
+}
+
+.send-news input[type=email]
+{
+    font-family: "Noto Sans Lao Looped";
+    color: #686868;
+}
+
+.send-news button
+{
+    background-color: var(--bg-primary);
+}
+
+.send-news button:hover 
+{   
+    color: var(--bg-link);
+    background-color: var(--bg-secondary); 
+}
+
+.send-news button:active 
+{ 
+    color: var(--bg-primary) !important;
+    background-color: var(--bg-lite-gray) !important; 
+}

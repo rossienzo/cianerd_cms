@@ -1,0 +1,38 @@
+.content h2
+{
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.content p 
+{
+    text-align: justify;
+    font-family: "Noto Sans Lao Looped";
+    text-transform: uppercase;
+}
+
+.content .ratio
+{
+    max-width: 700px;
+}
+
+/* Form */
+.content form label
+{
+    color: var(--bg-primary);
+}
+
+.content form input,
+.content form textarea
+{
+    font-family: "Noto Sans Lao Looped";
+    color: var(--bg-primary);
+
+    background-color: var(--bg-lite-gray);
+    border: 0;
+}
+
+.content form textarea
+{
+    min-height: 40px;
+}
