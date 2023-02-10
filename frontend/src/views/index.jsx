@@ -8,10 +8,10 @@ import News from "../common/news/News";
 import Navigation from "../common/navigation/Navigation";
 import Footer from "../common/layout/Footer";
 import axios from "axios";
+import { getData } from "../api/Api";
 
 class Index extends Component
 {
-
     constructor(props)
     {
         super(props);
@@ -25,18 +25,10 @@ class Index extends Component
     async componentDidMount() 
     {
         this.setState({ ...this.state,
-            dataCarousel: await this.getData(process.env.REACT_APP_CAROUSEL_URL , process.env.REACT_APP_CAROUSEL_TOKEN), 
-            dataCards: await this.getData(process.env.REACT_APP_CARDS_ITENS_URL, process.env.REACT_APP_CARDS_ITENS_TOKEN)})
+            dataCarousel: await getData(process.env.REACT_APP_CAROUSEL_URL , process.env.REACT_APP_CAROUSEL_TOKEN), 
+            dataCards: await getData(process.env.REACT_APP_CARDS_ITENS_URL, process.env.REACT_APP_CARDS_ITENS_TOKEN)})
     }
 
-    async getData(url, token)
-    {
-        return await axios.get(url, {
-            headers: { Authorization: `Bearer ${ token }` }
-        }).then(response => {
-            return response.data.data;
-        });
-    }
 
     render()
     {

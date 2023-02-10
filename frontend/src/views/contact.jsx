@@ -4,7 +4,13 @@ import Navigation from "../common/navigation/Navigation";
 import Content from "../common/content/Content";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Alert } from "react-bootstrap";
+
+import axios from "axios";
+import { insertData } from "../api/Api";
+
+import { initialState } from "../state/initialState";
+import If from "../common/operador/If";
 
 class Contact extends Component
 {
@@ -12,45 +18,71 @@ class Contact extends Component
     {
         super(props);
 
-        this.state = {
-            client: {
-                name: "",
-                email: "",
-                phone: "",
-                title: "",
-                message: "" 
-            },
-            data: []
-        }
+        this.state = initialState;
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
 
+    inputErrorHandler(object)
+    {
+        return;
+    }
+    /*
+    // Verifica se os campos contém algum dado vazio
+        for (const prop in this.state.client) 
+            if(this.state.client[prop].replace(/\s/g, "") === "")
+                return this.setState({...this.state, alert: {...this.state.alert, type: "warning", message: "Nenhum campo pode estar vazio!"}});
+            else
+                this.setState({...this.state, alert: initialState.alert});
+    */
     handleSubmit(e)
     {
         e.preventDefault();
         
-        fetch('https://example.com/api/submit-form', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(this.state),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+        // Verifica se os campos contém algum dado vazio
+        for (const prop in this.state.client) 
+            if(this.state.client[prop].replace(/\s/g, "") === "")
+                return this.setState({...this.state, alert: {...this.state.alert, type: "warning", message: "Nenhum campo pode estar vazio!"}});
+            else
+                this.setState({...this.state, alert: initialState.alert});
+        
+
+        insertData(process.env.REACT_APP_CLIENTS_URL, process.env.REACT_APP_CLIENTS_TOKEN, this.state.client)
+        .then(data => 
+        {  
+            this.setState({...this.state, client: initialState.client, 
+                alert: 
+                {
+                    ...this.state.alert, 
+                    type: "success", 
+                    message:"Mensagem enviada! Nós da Cia Nerd agradeçemos o contato!"
+                } 
+            })
+        })
+        .catch(error => 
+        {
+            console.error('Error:', error);
+            this.setState({...this.state, 
+                alert: 
+                {
+                    ...this.state.alert, 
+                    type: "danger", 
+                    message:"Erro! Não foi possível receber a sua mensagem, porfavor entre em contato pelo telefone"
+                } 
+            })
+        });
     }
 
     handleChange(e)
     {
         this.setState({ ...this.state, 
-            client: { ...this.state.client,
-            [e.target.name]: e.target.value
-        }})
+            client: 
+            { 
+                ...this.state.client,
+                [e.target.name]: e.target.value
+            }
+        })
     }
 
     render()
@@ -77,17 +109,22 @@ class Contact extends Component
                     </Content>
 
                     <Content title="Fale conosco" col="col-9">
+                        <If test={ this.state.alert.message != "" }>
+                            <Alert variant={this.state.alert.type} >
+                                {this.state.alert.message}
+                            </Alert>
+                        </If>
                         <Form onSubmit={this.handleSubmit}>
                             <Row className="mb-3">
                                 <Col>
                                     <Form.Label>Nome</Form.Label>
                                     <Form.Control type="text" className="rounded-0" 
-                                        name="name" onChange={ e => this.handleChange(e)} placeholder="Digite seu nome completo"/>
+                                        name="name" onChange={ e => this.handleChange(e)} value={ this.state.client.name || ""} placeholder="Digite seu nome completo"/>
                                 </Col>
                                 <Col>
                                     <Form.Label>E-mail</Form.Label>
                                     <Form.Control type="email" className="rounded-0" 
-                                        name="email" onChange={ e => this.handleChange(e)}  placeholder="Digite seu email" />
+                                        name="email" onChange={ e => this.handleChange(e)} value={ this.state.client.email || ""} placeholder="Digite seu email" />
                                 </Col>
                             </Row>
 
@@ -95,12 +132,12 @@ class Contact extends Component
                                 <Col>
                                     <Form.Label>Telefone</Form.Label>
                                     <Form.Control type="text" className="rounded-0" 
-                                        name="phone" onChange={ e => this.handleChange(e)} placeholder="Digite seu Telefone" />
+                                        name="phone" onChange={ e => this.handleChange(e)} value={ this.state.client.phone || ""} placeholder="Digite seu Telefone" />
                                 </Col>
                                 <Col>
                                     <Form.Label>Assunto</Form.Label>
                                     <Form.Control type="text" className="rounded-0" 
-                                        name="title" onChange={ e => this.handleChange(e)}  placeholder="Digite o assunto" />
+                                        name="title" onChange={ e => this.handleChange(e)} value={ this.state.client.title || ""}  placeholder="Digite o assunto" />
                                 </Col>
                             </Row>
 
@@ -108,7 +145,7 @@ class Contact extends Component
                                 <Col>
                                     <Form.Label>Mensagem</Form.Label>
                                     <Form.Control className="rounded-0" as="textarea" 
-                                        name="message" onChange={ e => this.handleChange(e)}  rows={6} minLength="30"  placeholder="Digite sua mensagem" />
+                                        name="message" onChange={ e => this.handleChange(e)} value={ this.state.client.message || ""}  rows={6} minLength="30"  placeholder="Digite sua mensagem" />
                                 </Col>
                             </Row>
 
