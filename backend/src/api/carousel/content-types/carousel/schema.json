@@ -4,7 +4,8 @@
   "info": {
     "singularName": "carousel",
     "pluralName": "carousels",
-    "displayName": "Carousel"
+    "displayName": "Carousel",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,12 +25,17 @@
       "minLength": 6
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "alt": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
     }
   }
 }

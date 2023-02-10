@@ -9,9 +9,6 @@ import Navigation from "../common/navigation/Navigation";
 import Footer from "../common/layout/Footer";
 import axios from "axios";
 
-const localURL = "http://localhost:1337";
-const token = "4e5c563267323d4ff974c5eb8e90a17674a4c8c3e21b7a564eff26f12e86a33c280a0c2e712f7c7e069896fcad5b854da635ac5b262f96357d4bb6e36131f6045d6ca2577e9e785fdd6ca22d227fbe5fbcad86e72658032beaa15785a7bc465517ae2aedd38cd18062e8bc5dda2a31eef7d14e64747b6e21e9a3d62b55028e28";
-
 class Index extends Component
 {
 
@@ -20,19 +17,22 @@ class Index extends Component
         super(props);
 
         this.state = {
-            data: []
+            dataCarousel: [],
+            dataCards: []
         }
     }
 
     async componentDidMount() 
     {
-        this.setState({ ...this.state, data: await this.getData()})
+        this.setState({ ...this.state,
+            dataCarousel: await this.getData(process.env.REACT_APP_CAROUSEL_URL , process.env.REACT_APP_CAROUSEL_TOKEN), 
+            dataCards: await this.getData(process.env.REACT_APP_CARDS_ITENS_URL, process.env.REACT_APP_CARDS_ITENS_TOKEN)})
     }
 
-    async getData()
+    async getData(url, token)
     {
-        return await axios.get("http://localhost:1337/api/products?populate=product_image",{
-            headers: { Authorization: `Bearer ${token}` }
+        return await axios.get(url, {
+            headers: { Authorization: `Bearer ${ token }` }
         }).then(response => {
             return response.data.data;
         });
@@ -43,13 +43,14 @@ class Index extends Component
         return (
             <React.Fragment>
                 <Navigation />
-                <Header />
+                <Header dataCarousel={ this.state.dataCarousel }/>
                 <Main>  
                     <h2>NOSSOS GEEKS</h2>
                     <Cards>
-                       {this.state.data.map(item => (
+                       {this.state.dataCards.map(item => (
                             <GeekCard 
-                                imgSrc={localURL + item.attributes.product_image.data[0].attributes.url}
+                                idKey={item.id}
+                                imgSrc={process.env.REACT_APP_URL_LOCAL + item.attributes.product_image.data[0].attributes.url}
                                 category={item.attributes.category}
                                 title={item.attributes.title}    
                                 mark={item.attributes.mark}    

@@ -11,6 +11,46 @@ class Contact extends Component
     constructor(props)
     {
         super(props);
+
+        this.state = {
+            client: {
+                name: "",
+                email: "",
+                phone: "",
+                title: "",
+                message: "" 
+            },
+            data: []
+        }
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleSubmit(e)
+    {
+        e.preventDefault();
+        
+        fetch('https://example.com/api/submit-form', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(this.state),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+
+    handleChange(e)
+    {
+        this.setState({ ...this.state, 
+            client: { ...this.state.client,
+            [e.target.name]: e.target.value
+        }})
     }
 
     render()
@@ -37,33 +77,38 @@ class Contact extends Component
                     </Content>
 
                     <Content title="Fale conosco" col="col-9">
-                        <Form method="post" target="#">
+                        <Form onSubmit={this.handleSubmit}>
                             <Row className="mb-3">
                                 <Col>
                                     <Form.Label>Nome</Form.Label>
-                                    <Form.Control type="text" className="rounded-0" placeholder="Digite seu nome completo" />
+                                    <Form.Control type="text" className="rounded-0" 
+                                        name="name" onChange={ e => this.handleChange(e)} placeholder="Digite seu nome completo"/>
                                 </Col>
                                 <Col>
                                     <Form.Label>E-mail</Form.Label>
-                                    <Form.Control type="email" className="rounded-0" placeholder="Digite seu email" />
+                                    <Form.Control type="email" className="rounded-0" 
+                                        name="email" onChange={ e => this.handleChange(e)}  placeholder="Digite seu email" />
                                 </Col>
                             </Row>
 
                             <Row className="mb-3">
                                 <Col>
                                     <Form.Label>Telefone</Form.Label>
-                                    <Form.Control type="text" className="rounded-0" placeholder="Digite seu Telefone" />
+                                    <Form.Control type="text" className="rounded-0" 
+                                        name="phone" onChange={ e => this.handleChange(e)} placeholder="Digite seu Telefone" />
                                 </Col>
                                 <Col>
                                     <Form.Label>Assunto</Form.Label>
-                                    <Form.Control type="text" className="rounded-0" placeholder="Digite o assunto" />
+                                    <Form.Control type="text" className="rounded-0" 
+                                        name="title" onChange={ e => this.handleChange(e)}  placeholder="Digite o assunto" />
                                 </Col>
                             </Row>
 
                             <Row className="mb-3">
                                 <Col>
                                     <Form.Label>Mensagem</Form.Label>
-                                    <Form.Control className="rounded-0" as="textarea" rows={6} minLength="30"  placeholder="Digite sua mensagem" />
+                                    <Form.Control className="rounded-0" as="textarea" 
+                                        name="message" onChange={ e => this.handleChange(e)}  rows={6} minLength="30"  placeholder="Digite sua mensagem" />
                                 </Col>
                             </Row>
 

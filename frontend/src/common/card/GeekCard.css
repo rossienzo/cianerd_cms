@@ -8,7 +8,17 @@
 .card .card-img-top
 {
     padding: 40px 40px 15px 40px;
-    border-bottom: 1px solid #ebe9e9;
+    
+}
+
+.card .card-img
+{
+    height: 270px;
+}
+
+.card .card-body
+{
+    border-top: 1px solid #ebe9e9;
 }
 
 .card .card-body .card-title

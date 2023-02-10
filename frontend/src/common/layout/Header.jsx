@@ -7,7 +7,7 @@ import iconLocation from "../../res/icons/location.png";
 
 const Header = (props) => (
     <header className="header">
-        <CiaCarousel />
+        <CiaCarousel dataCarousel={ props.dataCarousel }/>
         <div className="container">
             <Banner>
                 <BannerItem 

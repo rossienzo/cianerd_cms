@@ -14,10 +14,10 @@ const Footer = (props) => (
             <Row>
                 <Col>
                     <address>
-                        <a href="tel:22997719547">(22) 99771-9547</a> <br />
-                        <a href="mailto:pedropugian@consultoriafocus.com"> pedropugian@consultoriafocus.com</a> <br />
+                        <a href="tel:4499876-5432">(44) 99876-5432</a> <br />
+                        <a href="mailto:fakemail@hotmail.com"> fakemail@hotmail.com</a> <br />
                         <a href="https://goo.gl/maps/uT91sHwfywhPSKHU7"target="_blank">
-                            R. Resende, 470 - Jardim Mariléa - Rio das Ostras - <br />
+                            R. Resende, 470 - Jardim Mariléa - Rio das Ostras - 
                             Rio de janeiro
                         </a>
                     </address>
@@ -34,10 +34,10 @@ const Footer = (props) => (
                 <Col className="social-medias">
                     <h3>Nossas Redes</h3>
                     <Row className="icons">
-                        <Col> <img className="icon" src={faceLogo} alt="facebook logo" /> </Col>
-                        <Col> <img className="icon" src={instaLogo} alt="instagram logo" /> </Col>
-                        <Col> <img className="icon" src={twitterLogo} alt="twitter logo" /> </Col>
-                        <Col> <img className="icon" src={whatsLogo} alt="whastapp logo" /> </Col>
+                        <Col> <a href="#"> <img className="icon" src={faceLogo} alt="facebook logo" /> </a> </Col>
+                        <Col> <a href="#"> <img className="icon" src={instaLogo} alt="instagram logo" /> </a> </Col>
+                        <Col> <a href="#"> <img className="icon" src={twitterLogo} alt="twitter logo" /> </a> </Col>
+                        <Col> <a href="#"> <img className="icon" src={whatsLogo} alt="whastapp logo" /> </a> </Col>
                     </Row>
                 </Col>
             </Row>

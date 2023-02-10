@@ -3,12 +3,15 @@ import If from "../operador/If";
 const { Card, Col } = require("react-bootstrap");
 
 const GeekCard = (props) => (
-  <Col>
-    <Card 
+  <Col key={props.idKey}>
+    <Card key={`card-` + props.idKey}
       className="rounded-0"
       style={{ width: '18rem' }}>
       <Card.Text className="category"> {props.category} </Card.Text>
-      <Card.Img variant="top" src={props.imgSrc} />
+      
+      <div className="card-img">
+        <Card.Img variant="top" src={props.imgSrc} />
+      </div>
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>

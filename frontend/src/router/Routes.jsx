@@ -20,7 +20,7 @@ const Routes = createBrowserRouter([
     element: <Contact />,
     loader: async () => {
       return titleName("Contato")
-    }
+    },
   },
   {
     path:"*",
