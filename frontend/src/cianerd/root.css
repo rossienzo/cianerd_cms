@@ -1,0 +1,11 @@
+/* variáveis */ :root 
+{ 
+  --bg-catalog-type-product:#CCD2F1;
+  --bg-link:#FFFFFF;
+  --bg-primary:#5271FF;
+  --bg-secondary:#4D68FE;
+  --bg-lite-gray: #F3F3F3;
+  --height-nav: 85px;
+  --mg-bottom: 2rem;
+  --h3-font-size: 1.2rem;
+}

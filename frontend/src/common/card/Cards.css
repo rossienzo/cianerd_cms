@@ -1,0 +1,13 @@
+.cards
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cards .col
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--mg-bottom);
+}

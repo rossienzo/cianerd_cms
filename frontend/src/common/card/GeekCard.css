@@ -1,0 +1,40 @@
+.card .category
+{
+    color: var(--bg-catalog-type-product);
+    padding: 20px 0 0 20px;
+    margin: 0;
+}
+
+.card .card-img-top
+{
+    padding: 40px 40px 15px 40px;
+    
+}
+
+.card .card-img
+{
+    height: 270px;
+}
+
+.card .card-body
+{
+    border-top: 1px solid #ebe9e9;
+}
+
+.card .card-body .card-title
+{
+    text-align: center;
+    font-size: 1em;
+}
+
+.card .card-body .card-text
+{
+    font-family: "Noto Sans Lao Looped";
+    margin: 5px;
+}
+
+.card .card-body .card-text span
+{
+    font-family: "Bungee Regular";
+    font-size: .85em;
+}
