@@ -100,7 +100,7 @@ class Contact extends Component
                     </Content>
 
                     <Content title="Nossa Loja" col="col-6 ratio ratio-21x9">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.137668719679!2d-41.929374282556154!3d-22.499017399999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x97b4cfcb19074b%3A0x86558b7d7bd70f0b!2sR.%20Resende%2C%20470%20-%20Jardim%20Maril%C3%A9a%2C%20Rio%20das%20Ostras%20-%20RJ%2C%2028895-883!5e0!3m2!1spt-BR!2sbr!4v1669827149727!5m2!1spt-BR!2sbr" 
+                        <iframe src="https://www.google.com/maps/embed?pb!1m18!1m12!1m3!1d3686.137668719679!2d-41.929374282556154!3d-22.499017399999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x97b4cfcb19074b%3A0x86558b7d7bd70f0b!2sR.%20Resende%2C%20470%20-%20Jardim%20Maril%C3%A9a%2C%20Rio%20das%20Ostras%20-%20RJ%2C%2028895-883!5e0!3m2!1spt-BR!2sbr!4v1669827149727!5m2!1spt-BR!2sbr" 
                             loading="lazy" 
                             referrerPolicy="no-referrer-when-downgrade"
                             placeholder="loja no google maps"
@@ -109,7 +109,7 @@ class Contact extends Component
                     </Content>
 
                     <Content title="Fale conosco" col="col-9">
-                        <If test={ this.state.alert.message != "" }>
+                        <If test={ this.state.alert.message !== "" }>
                             <Alert variant={this.state.alert.type} >
                                 {this.state.alert.message}
                             </Alert>
