@@ -1,0 +1,23 @@
+/* Media Query */
+@media (max-width: 520px)
+{
+  .banner p,
+  .banner span
+  {
+    font-size: .75em;
+  }
+
+  .banner .icon img
+  {
+    max-height: 28px;
+  }
+}
+
+@media (max-width: 417px)
+{
+  .banner-item.col:last-child
+  {
+    margin-top: 20px;
+    border-left: none;
+  }
+}

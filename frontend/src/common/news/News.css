@@ -52,3 +52,14 @@
     color: var(--bg-primary) !important;
     background-color: var(--bg-lite-gray) !important; 
 }
+
+
+/* Media Query */
+@media (max-width: 580px)
+{
+    .send-news .row 
+    {
+        flex-direction: column;
+    }
+
+}
