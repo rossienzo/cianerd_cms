@@ -6,7 +6,6 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Row, Col, Alert } from "react-bootstrap";
 
-import axios from "axios";
 import { insertData } from "../api/Api";
 
 import { initialState } from "../state/initialState";

@@ -6,6 +6,8 @@ Site desenvolvido utilizando as seguintes tecnologias:
 - MySQL.
 
 ### Front End
+- HTML 5;
+- CSS 3;
 - React;
 - Boostrap;
 - Axios.
@@ -23,11 +25,12 @@ ou
 - npm run start (para inicir o projeto sem o modo desenvolvimento).
 
 ### Usuário da página de administrador
-username: admin@hotmail.com
-password: @dMin123
+- username: admin@hotmail.com
+- password: @dMin123
 
 ## Front End
 Aplicar os seguintes passos:
 - npm i (para instalar as dependências do projeto);
-- npm start (para iniciar o porjeto).
+- npm start (para iniciar o projeto).
 
+## Demonstração
