@@ -23,16 +23,24 @@ ou
 - npm run start (para inicir o projeto sem o modo desenvolvimento).
 
 ### Usuário da página de administrador
-username: admin@hotmail.com
-password: @dMin123
+- username: admin@hotmail.com
+- password: @dMin123
 
 ## Front End
 Aplicar os seguintes passos:
 - npm i (para instalar as dependências do projeto);
 - npm start (para iniciar o porjeto).
 
-## Demonstração
+# Demonstração
+## Back End
+### Strapi - Carousel
+![carousel_backend](https://user-images.githubusercontent.com/20730349/218479223-2742f02f-176c-450b-8f28-50a839661c0b.png)
 
+### Strapi - Products Example
+![product_example_strapi](https://user-images.githubusercontent.com/20730349/218479616-5ea518f2-44e5-4920-891b-364e560f824a.png)
+
+
+## Front End
 ### Widescreen
 ![widescreen_1](https://user-images.githubusercontent.com/20730349/218478066-3741e4cb-0805-44c3-87af-5431b1e6512b.png)
 
