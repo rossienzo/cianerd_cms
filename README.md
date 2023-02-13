@@ -33,9 +33,6 @@ Aplicar os seguintes passos:
 - npm i (para instalar as dependências do projeto);
 - npm start (para iniciar o projeto).
 
-<<<<<<< HEAD
-## Demonstração
-=======
 # Demonstração
 ## Back End
 ### Strapi - Carousel
@@ -55,4 +52,3 @@ Aplicar os seguintes passos:
 ### Mobile Screen
 ![mobile_screen_1](https://user-images.githubusercontent.com/20730349/218478305-b157a7c6-ad4b-4326-8e89-ea777e343ca4.png)
 
->>>>>>> 25218ccbaad03f87c3cf0f9ec6fb13f2f9aedfc3
